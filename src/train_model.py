@@ -55,13 +55,13 @@ if __name__ == "__main__":
             pipeline,
             mp["params"],
             cv=5,
-            scoring="accuracy",
+            scoring="recall",
             n_jobs=-1
         )
 
         grid_search.fit(X, y)
 
-        print(f"{name} Best CV Accuracy: {grid_search.best_score_:.3f}")
+        print(f"{name} Best CV recall: {grid_search.best_score_:.3f}")
         print(f"{name} Best Params: {grid_search.best_params_}")
 
         if grid_search.best_score_ > best_score:
